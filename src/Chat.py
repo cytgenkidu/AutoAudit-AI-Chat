@@ -382,19 +382,19 @@ if "logged_in" in st.session_state:
                             filters["source"] = source
 
                         docs_response = []
-                        docs_response.extend(
-                            search_pinecone(
-                                query=query,
-                                filters=filters,
-                                top_k=search_knowledge_base_top_k,
-                            )
-                        )
                         # docs_response.extend(
-                        #     search_weaviate(
+                        #     search_pinecone(
                         #         query=query,
+                        #         filters=filters,
                         #         top_k=search_knowledge_base_top_k,
                         #     )
                         # )
+                        docs_response.extend(
+                            search_weaviate(
+                                query=query,
+                                top_k=search_knowledge_base_top_k,
+                            )
+                        )
                         docs_response.extend(
                             search_internet(query, top_k=search_online_top_k)
                         )

@@ -414,7 +414,7 @@ def search_weaviate(query: str, top_k: int = 16):
     client = weaviate.connect_to_local(host="localhost")
 
     try:
-        water = client.collections.get("Water")
+        water = client.collections.get("Audit")
         response = water.query.near_text(query=query, limit=top_k)
 
     finally:
@@ -423,7 +423,7 @@ def search_weaviate(query: str, top_k: int = 16):
     docs_list = []
     for doc in response.objects:
         docs_list.append(
-            {"content": doc.properties["answer"], "source": doc.properties["source"]}
+            {"content": doc.properties["content"], "source": doc.properties["source"]}
         )
 
     return docs_list
@@ -1251,7 +1251,7 @@ def get_faiss_db(uploaded_files):
         - This function relies on the FAISS library for creating the database and OpenAIEmbeddings for generating embeddings.
     """
 
-    chunks = []
+    chunks = [] = []
     for uploaded_file in uploaded_files:
         try:
             f = io.BytesIO(uploaded_file.read())
@@ -1503,7 +1503,7 @@ def xata_chat_history(_session_id: str):
         session_id=_session_id,
         api_key=os.environ["XATA_API_KEY"],
         db_url=os.environ["XATA_DATABASE_URL"],
-        table_name="tiangong_memory",
+        table_name="audit_memory",
     )
 
     return chat_history
@@ -1608,7 +1608,7 @@ def fetch_chat_history(username: str):
             f"""SELECT "sessionId", "content"
     FROM (
         SELECT DISTINCT ON ("sessionId") "sessionId", "xata.createdAt", "content"
-        FROM "tiangong_memory"
+        FROM "audit_memory"
         WHERE "additionalKwargs"->>'id' = '{username}'
         ORDER BY "sessionId" DESC, "xata.createdAt" ASC
     ) AS subquery"""
@@ -1651,7 +1651,7 @@ def delete_chat_history(session_id):
 
     client = XataClient()
     client.sql().query(
-        'DELETE FROM "tiangong_memory" WHERE "sessionId" = $1',
+        'DELETE FROM "audit_memory" WHERE "sessionId" = $1',
         [session_id],
     )
 
