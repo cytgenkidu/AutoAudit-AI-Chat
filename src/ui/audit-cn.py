@@ -42,7 +42,7 @@ ui_data = {
               width: 250px;
               height: 50px;
               background-image: url('app/static/audit/bistu_logo_new1.png');
-              background-size: 200px 50px;
+              background-size: 250px 50px;
               background-repeat: no-repeat;
               background-position: center;
               opacity: 0.5;
@@ -74,7 +74,7 @@ ui_data = {
     "sidebar_image": "src/static/audit/logo.png",
     "sidebar_title": "AutoAudit Chat",
     "sidebar_subheader": "AI for Audit 🔬 - 智能聊天机器人",
-    "sidebar_welcome_text": """Hi, **{username}**! You're currently on the **{subscription}** plan.""",
+    "sidebar_welcome_text": """嗨，**{username}**！您当前处于**{subscription}**计划。""",
     "sidebar_markdown": """
         <div style="position: fixed; left:25px; bottom: 10px; height:110px; width: 315px; font-size: 14px; font-weight: bold; background-color: #F0F2F6;">
             <table style="border: 0; position: absolute; bottom: 35px;">
@@ -102,16 +102,16 @@ ui_data = {
         </div>
         """,
     "sidebar_expander_title": "高级搜索设置:",
-    "search_knowledge_base_checkbox_label": "Knowledge Base",
-    "search_internet_checkbox_label": "Internet",
-    "search_wikipedia_checkbox_label": "Wikipedia",
+    "search_knowledge_base_checkbox_label": "知识库",
+    "search_internet_checkbox_label": "互联网",
+    "search_wikipedia_checkbox_label": "维基百科",
     "search_arxiv_checkbox_label": "arXiv",
-    "search_docs_checkbox_label": "Documents",
-    "search_docs_options": "Options:",
-    "search_docs_options_isolated": "Isolated",
-    "search_docs_options_combined": "Combined",
-    "sidebar_file_uploader_title": "Documents to analyze:",
-    "sidebar_file_uploader_spinner": "分析中...",
+    "search_docs_checkbox_label": "文档",
+    "search_docs_options": "选项:",
+    "search_docs_options_isolated": "独立",
+    "search_docs_options_combined": "组合",
+    "sidebar_file_uploader_title": "待分析的文档：",
+    "sidebar_file_uploader_spinner": "正在分析...",
     "sidebar_file_uploader_error": "所有文件都无法分析，请检查格式!",
     "sidebar_instructions": """*我是一个为学术和专业文件设计的检索增强生成（RAG）工具。我利用您在提示中提供的信息来**搜索**相关文档，然后基于这些文档生成回应。*.
 ### 🌟 理想问题:
@@ -121,14 +121,14 @@ ui_data = {
 1. 你好!? 你能做什么?
 2. 帮我写/翻译一篇审计报告。
 """,
-    "current_chat_title": "Chat History :",
+    "current_chat_title": "聊天历史：",
     "chat_ai_avatar": "src/static/audit/logo.png",
     "chat_user_avatar": "src/static/user.png",
-    "chat_ai_welcome": "你好! 无论是查询信息、解决问题还是探索内容，我都在这里帮助你。你想了解什么信息呢?",
+    "chat_ai_welcome": "您好！有什么可以帮您？",
     "chat_human_placeholder": "用你喜欢的任何语言问我任何问题吧!",
-    "sidebar_newchat_button_label": "New Chat",
-    "sidebar_delete_button_label": "Delete Chat",
-    "sidebar_newchat_label": "New Chat",
+    "sidebar_newchat_button_label": "新建",
+    "sidebar_delete_button_label": "删除",
+    "sidebar_newchat_label": "新对话",
     "chat_error_message": "哎呀，我们目前遇到了极高的访问量。请稍后再试。",
     "wix_login_wait": "请耐心等待..."
 }
